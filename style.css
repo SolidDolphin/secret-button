@@ -175,4 +175,51 @@ button {
 
 #shocked_emoji {
   width: 100px;
+  animation: shocked 2s infinite ease-in-out;
+}
+
+@keyframes shocked {
+  0% {
+    transform: scale(0.6);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: rotate(10deg) translateX(5px);
+  }
+
+  40% {
+    transform: rotate(-10deg) translateX(-5px);
+  }
+
+  45% {
+    transform: rotate(10deg) translateX(5px);
+  }
+
+  50% {
+    transform: rotate(-10deg) translateX(-5px);
+  }
+
+  55% {
+    transform: rotate(10deg) translateX(5px);
+  }
+
+  60% {
+    transform: rotate(-10deg) translateX(-5px);
+  }
+
+  65% {
+    transform: rotate(10deg) translateX(5px);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.6);
+  }
 }
