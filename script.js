@@ -1,5 +1,13 @@
 const btn = document.getElementById("escape-btn");
 
+btn.addEventListener("mouseenter", () => {
+  btn.textContent = "ALSO YES";
+});
+
+btn.addEventListener("mouseleave", () => {
+  btn.textContent = "NO";
+});
+
 // --- BUTTON LOGIC (Keep this exactly as we fixed it) ---
 function initButton() {
   const rect = btn.getBoundingClientRect();
@@ -107,3 +115,13 @@ function createHeart(spawnAnywhere = false) {
   // 2. Start the continuous flow from the bottom
   setInterval(() => createHeart(false), GENERATION_RATE);
 })();
+
+// naam setup
+
+const params = new URLSearchParams(window.location.search);
+
+const naam = params.get("naam");
+
+if (naam) {
+  document.getElementById("naam-valentine").textContent = `Hey, ${naam} 😏`;
+}
