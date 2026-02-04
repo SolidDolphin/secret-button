@@ -1,0 +1,178 @@
+body,
+html {
+  font-family:
+    -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu,
+    sans-serif;
+  margin: 0;
+  height: 100vh;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #e29587 0%, #d66d75 100%);
+}
+
+#title-section {
+  padding-top: 200px;
+  padding-bottom: -10px;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+h1 {
+  font-size: 80pt;
+  color: #da0000;
+}
+
+button {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #ff7676;
+  border-radius: 200px;
+  border-width: 0;
+  box-shadow:
+    rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0,
+    rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+
+  font-size: 2rem;
+  font-weight: bold;
+  height: 100px;
+  width: 200px;
+  line-height: 1.15;
+  margin: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition:
+    all 0.2s,
+    box-shadow 0.08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#heart-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.heart-asset {
+  position: absolute;
+  bottom: -100px;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    /* Final position: floats off-screen with slight sway and scale up */
+    transform: translateY(-125vh) translateX(var(--sway)) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#img-overlap1 {
+  position: absolute;
+  top: -10%;
+  left: 75%;
+  pointer-events: none;
+  height: 60%;
+  width: 30%;
+  z-index: 100;
+  transform: rotate(20deg);
+}
+
+#img-overlap2 {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  pointer-events: none;
+  height: 40%;
+  width: 21%;
+  z-index: 100;
+  transform: rotate(-20deg);
+}
+
+#button-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* Space between the two buttons */
+  margin-top: 50px;
+  width: 100%;
+}
+
+.btn-placeholder:nth-child(1):hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-placeholder {
+  position: relative; /* Anchors the emojis and the buttons */
+  width: 200px;
+  height: 100px;
+}
+
+#no-btn-placeholder {
+  width: 200px; /* Must match button width */
+  height: 100px; /* Must match button height */
+  position: relative; /* Keeps it in the flow */
+}
+
+.btn-wrapper {
+  position: relative;
+  display: flex; /* Centers button within the wrapper */
+  justify-content: center;
+  align-items: center;
+}
+
+#escape-btn {
+  /* Ensure position: absolute is removed here */
+  background-color: #dd3d3d;
+  transition: transform 0.1s ease; /* Use transform for smoother movement */
+  z-index: 100;
+}
+
+#yes-btn {
+  z-index: 5;
+}
+
+#shocked_emoji {
+  width: 100px;
+}
